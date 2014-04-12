@@ -1,14 +1,15 @@
 body {
   text-align : center;
-  font-family: "Lucida Bright", Georgia, serif;
-  margin-top:20px;
+  font-family: 'Roboto', sans-serif;
 
 }
 
 h1 {
-  font-size: 32pt;
+font-family: 'Jockey One', sans-serif;
+  font-size: 100px;
   text-align: center;
   text-transform: uppercase;
+  padding:30px 0px;
 }
 
 img {
@@ -62,4 +63,7 @@ top:-300px;
 #left-element{float:left;width:50%;height:40%;overflow: hidden;}
 #right-element{float:right;}
 #clearfix{clear:both;}
+
+h3{font-size: 30px}
+label{font-size: 20px;}
 
