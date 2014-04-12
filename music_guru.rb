@@ -25,7 +25,7 @@ get '/' do
 end
 
 post '/tracks' do
-  fingerprint = `ENMFP_codegen/codegen.#{settings.arch} #{params[:track][:tempfile].path} 10 20`
+  fingerprint = 'ENMFP_codegen/codegen.#{settings.arch} #{params[:track][:tempfile].path} 10 20'
   code = JSON.parse(fingerprint).first["code"]
   song = Echowrap.song_identify(:code => code)
   if song.nil?
