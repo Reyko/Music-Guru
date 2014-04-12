@@ -26,14 +26,24 @@ end
 
 post '/tracks' do
 
+  checkbox = params[:tc].to_i
+  puts "HELLO #{checkbox}"
   fingerprint = `ENMFP_codegen/codegen.#{settings.arch} #{params[:track][:tempfile].path} 10 20`
   code = JSON.parse(fingerprint).first["code"]
   song = Echowrap.song_identify(:code => code)
-  puts "THIS #{song}"
-  if song.nil?
-    flash[:notice] = "Er.. you've got me..."
+
+  if checkbox == 1
+
+    if song.nil?
+      flash[:notice] = "Er.. you've got me..."
+    else
+     flash[:notice] = "Was your song #{song.title} by #{song.artist_name}?"
+   end
+
   else
-    flash[:notice] = "Was your song #{song.title} by #{song.artist_name}?"
+
+    flash[:notice] = "You have not checked the box!"
+
   end
 
   redirect '/'
