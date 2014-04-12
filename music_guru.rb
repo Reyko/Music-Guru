@@ -28,7 +28,8 @@ post '/tracks' do
 
   fingerprint = `ENMFP_codegen/codegen.#{settings.arch} #{params[:track][:tempfile].path} 10 20`
   code = JSON.parse(fingerprint).first["code"]
-  song = Echowrap.song_identify(:code => fingerprint)
+  song = Echowrap.song_identify(:code => code)
+  puts "THIS #{song}"
   if song.nil?
     flash[:notice] = "Er.. you've got me..."
   else
