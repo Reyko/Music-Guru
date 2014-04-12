@@ -1,6 +1,8 @@
 body {
   text-align : center;
   font-family: "Lucida Bright", Georgia, serif;
+  margin-top:60px;
+ 
 }
 
 h1 {
@@ -12,6 +14,8 @@ h1 {
 img {
 
 }
+
+
 
 .field {
   margin: 20px;
@@ -45,3 +49,12 @@ img {
   display:block;
   width:0;
 }
+
+
+
+
+#container{padding:120px 80px;}
+#left-element{float:left;}
+#right-element{float:right;}
+#clearfix{clear:both;}
+

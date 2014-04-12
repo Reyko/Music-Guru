@@ -8,41 +8,38 @@
 
   <body>
     <h1>Sound Disjunction</h1>
-
+    <div id ="container"><!--Container start -->
     <% if flash[:notice] %>
       <div class="answer">
         <%= flash[:notice] %>
       </div>
     <% end %>
 
-    <div>
+    <div id="left-element">
       <img src="images/guru.png" title="Music Guru" alt="The all-knowing Music Guru" />
     </div>
 
-    <div>
+    <div id="right-element">
       <form action="/tracks" method="POST" enctype="multipart/form-data">
-
         <h3>Give me a track and I'll guess what it is...</h3>
-
         <div class="field">
           <label for="track">Track File</label>
           <input type="file" name="track" />
-        <div>
-
+        </div>
         <div class="field">
           <label for="tc">
             I certify that the music I am uploading is of good taste.
           <label>
           <input type="checkbox" name="tc" value="1" />
         </div>
-
         <div>
           <input type="submit" name="submit" value="Submit" />
         </div>
-
       </form>
     </div>
 
+    <div class="clearfix"></div>
+  </div><!-- Container end -->
   </body>
 
 </html>

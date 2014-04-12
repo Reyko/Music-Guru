@@ -17,7 +17,7 @@ end
 
 configure :development do
   # Uncomment the line below if you are using Mac OSX
-  # set :arch, 'Darwin'
+  set :arch, 'Darwin'
 end
 
 get '/' do
@@ -25,9 +25,12 @@ get '/' do
 end
 
 post '/tracks' do
+
   fingerprint = `ENMFP_codegen/codegen.#{settings.arch} #{params[:track][:tempfile].path} 10 20`
-  code = JSON.parse(fingerprint).first["code"]
-  song = Echowrap.song_identify(:code => code)
+#  code = JSON.parse(fingerprint).first["code"]
+puts "HELLO"
+puts settings.arch
+  song = Echowrap.song_identify(:code => fingerprint)
   if song.nil?
     flash[:notice] = "Er.. you've got me..."
   else
