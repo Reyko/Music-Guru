@@ -71,7 +71,7 @@ font-size: 25px;
 #right-element{float:right;}
 #clearfix{clear:both;}
 #submit{-webkit-appearance: none; width:120px; height:60px; background-color: #000;color:#fff;
-font-size: 18px;  font-weight:bold; padding:10px;border:none;outline-color:#FEFF49 }
+font-size: 18px;  font-weight:bold; padding:10px;border:none;outline-color:purple }
 
 h3{font-size: 30px}
 label{font-size: 20px;}
