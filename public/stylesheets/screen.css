@@ -66,12 +66,17 @@ font-size: 25px;
 
 
 
-#container{padding:0px 60px 0px 60px;}
+#container{padding:0px 60px 0px 60px;  
+    margin: 0 auto;
+    min-height: 100%; 
+    overflow-y: hidden; 
+    position: relative;}
+    
 #left-element{float:left;width:50%;overflow: hidden;height:500px;}
 #right-element{float:right;}
 #clearfix{clear:both;}
 #submit{-webkit-appearance: none; width:120px; height:60px; background-color: #000;color:#fff;
-font-size: 18px;  font-weight:bold; padding:10px;border:none;outline-color:purple }
+font-size: 18px;  font-weight:bold; padding:10px;border:none;}
 input#username {
 height: 40px;
 width: 100%;
