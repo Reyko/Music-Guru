@@ -48,11 +48,13 @@ post '/tracks' do
 
      else
         flash[:notice] = "You have not checked the box!"
+        @@name = false
      end
 
   else
    
      flash[:notice] = "You have not selected a song!"
+     @@name = false
 
   end
 
