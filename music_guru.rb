@@ -24,6 +24,10 @@ get '/' do
   erb :index
 end
 
+code = ""
+song = ""
+@@name = false
+
 post '/tracks' do
 
   checkbox = params[:tc].to_i
@@ -36,21 +40,26 @@ post '/tracks' do
      if checkbox == 1
 
          if song.nil?
-         flash[:notice] = "Er.. you've got me..."
+          flash[:notice] = "Er.. you've got me..."
          else
-        flash[:notice] = "Was your song #{song.title} by #{song.artist_name}?"
+          flash[:notice] = "I knew it! But wait.. Tell me your name first?"
+          @@name = true
          end
 
-    else
+     else
+        flash[:notice] = "You have not checked the box!"
+     end
 
-    flash[:notice] = "You have not checked the box!"
-
-    end
-
-   else
+  else
    
      flash[:notice] = "You have not selected a song!"
 
+  end
+
+   if params[:username]   
+      
+        flash[:notice] = "#{params[:username]}, was your song:\n\n#{song.title} by #{song.artist_name}?"
+        @@name =false
    end
 
   redirect '/'

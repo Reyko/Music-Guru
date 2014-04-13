@@ -12,9 +12,18 @@
   <body>
     <h1>Sound Disjunction</h1>
     <div id ="container"><!--Container start -->
+
     <% if flash[:notice] %>
       <div class="answer">
-        <%= flash[:notice] %>
+   
+        <%= flash[:notice].gsub(/\n/,'<br/>')%>
+            <%if @@name %>
+                 <form action="/tracks" method = "POST" enctype="multipart/form-data">
+                    <input type="text" name="username" id="username"/>
+                 </form>
+
+            <%end%>
+
       </div>
     <% end %>
 

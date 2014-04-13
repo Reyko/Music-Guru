@@ -72,6 +72,20 @@ font-size: 25px;
 #clearfix{clear:both;}
 #submit{-webkit-appearance: none; width:120px; height:60px; background-color: #000;color:#fff;
 font-size: 18px;  font-weight:bold; padding:10px;border:none;outline-color:purple }
+input#username {
+height: 40px;
+width: 100%;
+-webkit-appearance: none;
+margin-top: 20px;
+background-color: #f3961c;
+border: 1px dashed #000;
+font-size: 24px;
+outline:0;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
 
 h3{font-size: 30px}
 label{font-size: 20px;}
